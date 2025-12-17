@@ -30,7 +30,26 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('home') }}">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold text-primary" href="{{ route('diagnosis.index') }}">Expert System</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('categories.index') }}">Categories</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('spare-parts.index') }}">Spare Parts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('services.index') }}">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('transactions.index') }}">Transactions</a>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->

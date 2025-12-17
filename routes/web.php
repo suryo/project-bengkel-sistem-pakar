@@ -27,4 +27,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('spare-parts', App\Http\Controllers\SparePartController::class);
     Route::resource('services', App\Http\Controllers\ServiceController::class);
     Route::resource('transactions', App\Http\Controllers\TransactionController::class);
+    
+    // Expert System Routes
+    Route::get('/diagnosis', [App\Http\Controllers\DiagnosisController::class, 'index'])->name('diagnosis.index');
+    Route::post('/diagnosis', [App\Http\Controllers\DiagnosisController::class, 'process'])->name('diagnosis.process');
 });
